@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 function Carousel() {
-   
+   useEffect(()=>{
+        setInterval(()=>{
+            setTimeout(()=>{
+                document.getElementById('next').click() ;
+            } , 3000)
+            setTimeout(()=>{
+                document.getElementById('prev').click() ;  
+            } , 6000)
+        },3000)
+   } , [])
     
     return (
         <CarouselProvider naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={2}>
             <div class="flex items-center justify-center w-full h-full">
                 <div class="w-full relative flex items-center justify-center">
-                    <ButtonBack aria-label="slide backward" class="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left ring-4 ring-white p-0.5 rounded-full" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <ButtonBack id="prev" aria-label="slide backward" class="opacity-0 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" class="opacity-0 icon icon-tabler icon-tabler-chevron-left ring-4 ring-white p-0.5 rounded-full" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <polyline points="15 6 9 12 15 18" />
-                        </svg>
+                        </svg> */}
                     </ButtonBack>
                     <div class="w-full h-full mx-auto overflow-x-hidden">
                         <Slider>
@@ -79,11 +88,11 @@ function Carousel() {
                             </Slide>
                         </Slider>
                     </div>
-                    <ButtonNext aria-label="slide forward" class=" absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right ring-4 ring-white p-0.5 rounded-full" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <ButtonNext id="next" aria-label="slide forward" class="opacity-0 absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right ring-4 ring-white p-0.5 rounded-full" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <polyline points="9 6 15 12 9 18" />
-                        </svg>
+                        </svg> */}
                     </ButtonNext>
                 </div>
             </div>
