@@ -60,7 +60,9 @@ function MyApp() {
 
                </div>
             </div>
-            {/* Insert Carousel here */}
+            <div className="mt-10 sm:mt-20 px-5 md:px-10 lg:px-0 lg:pl-10">
+                <CarouselImages />
+            </div>
             <div className="mt-8 sm:mt-20 mx-6 flex flex-col items-center justify-center">
                 <div className="sm:text-center flex flex-col items-center">
                     <h1 className="text-2xl text-gray-800 font-semibold font-serif">Discover Different Type Of Properties For Rent </h1>
@@ -98,6 +100,7 @@ function MyApp() {
                                 <p className="text-base text-gray-300 ">56 Places In Your City</p>
                             </div>
                         </div>
+                        
                     </div>
                     
                 </div>
